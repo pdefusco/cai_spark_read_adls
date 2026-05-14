@@ -44,11 +44,12 @@ from pyspark import SparkContext
 
 filePath = os.environ["FILE_PATH"] #e.g. "abfss://<container>@<storage-account>.dfs.core.windows.net/path/to/file.csv"
 tableName = os.environ["TABLE_NAME"] #e.g. "default.myTable"
+connectionName = os.environ["SPARK_CONNECTION_NAME"]
 
 SparkContext.setSystemProperty('spark.executor.cores', '4')
 SparkContext.setSystemProperty('spark.executor.memory', '8g')
 
-conn = cmldata.get_connection(self.connectionName)
+conn = cmldata.get_connection(connectionName)
 spark = conn.get_spark_session()
 
 # Read from CSV
