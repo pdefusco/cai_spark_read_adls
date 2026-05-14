@@ -58,7 +58,7 @@ dfFromAdls = (
     spark.read
     .option("header", "true")
     .option("inferSchema", "true")
-    .csv(filePath)
+    .parquet(filePath)
 )
 
 dfFromAdls.show()
