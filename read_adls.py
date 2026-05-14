@@ -65,7 +65,9 @@ dfFromAdls.show()
 
 # Read from Hive Table
 
+'''
 df = spark\
     .table(tableName)
 
 df.show()
+'''
