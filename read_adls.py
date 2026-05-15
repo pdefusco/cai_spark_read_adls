@@ -43,7 +43,6 @@ from pyspark.sql import SparkSession
 from pyspark import SparkContext
 
 filePath = os.environ["FILE_PATH"] #e.g. "abfss://<container>@<storage-account>.dfs.core.windows.net/path/to/file.csv"
-tableName = os.environ["TABLE_NAME"] #e.g. "default.myTable"
 connectionName = os.environ["SPARK_CONNECTION_NAME"]
 
 SparkContext.setSystemProperty('spark.executor.cores', '4')
