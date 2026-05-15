@@ -52,7 +52,7 @@ SparkContext.setSystemProperty('spark.executor.memory', '8g')
 conn = cmldata.get_connection(connectionName)
 spark = conn.get_spark_session()
 
-# Read from CSV
+# Read from parquet
 
 dfFromAdls = (
     spark.read
@@ -62,12 +62,3 @@ dfFromAdls = (
 )
 
 dfFromAdls.show()
-
-# Read from Hive Table
-
-'''
-df = spark\
-    .table(tableName)
-
-df.show()
-'''
